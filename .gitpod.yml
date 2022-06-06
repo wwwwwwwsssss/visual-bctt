@@ -15,6 +15,10 @@ tasks:
     before: |
       cd ../backend
     init: |
+      export GO111MODULE=on # 开启go module
+      export GOPROXY=https://goproxy.cn # 更换数据源
+      go install github.com/securego/gosec/v2/cmd/gosec@latest
       go build
+      
     command: |
       sh restart.sh
