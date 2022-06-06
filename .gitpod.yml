@@ -12,9 +12,9 @@ tasks:
       npm run dev
 
   - name: backend
+    before: |
+      cd ../backend
     init: |
       go build
     command: |
       sh restart.sh
-
-workspaceLocation: frontend/workspace
