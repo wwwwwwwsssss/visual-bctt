@@ -1,0 +1,20 @@
+# frontend .gitpod.yml
+# multi-repo
+additionalRepositories:
+  - url: https://github.com/wwwwwwwsssss/ssbcV2
+    checkoutLocation: backend
+
+tasks:
+  - name: frontend
+    init: |
+      npm install
+    command: |
+      npm run dev
+
+  - name: backend
+    init: |
+      go build
+    command: |
+      sh restart.sh
+
+workspaceLocation: frontend/workspace
